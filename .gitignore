@@ -1,0 +1,48 @@
+# --- Secret ---
+.env
+.env.*
+!.env.*.example
+*.pem
+*.p12
+
+# --- Personal ---
+# docs/ and infra/ are submodules - never ignore them (see docs/00-migration-plan.md 2)
+/docs-private/
+/scripts/
+TODO-*.md
+
+# --- Gradle / Java ---
+.gradle/
+build/
+out/
+*.class
+*.jar
+!**/gradle/wrapper/gradle-wrapper.jar
+*.log
+
+# --- Python (fx-service) ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# --- Front ---
+node_modules/
+dist/
+.next/
+
+# --- Flutter ---
+.dart_tool/
+.flutter-plugins*
+mobile/build/
+
+# --- IDE / OS ---
+.idea/
+*.iml
+.vscode/*
+!.vscode/settings.json
+.DS_Store
+
+services/*/function.zip

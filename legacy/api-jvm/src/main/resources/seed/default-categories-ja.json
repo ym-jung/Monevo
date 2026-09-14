@@ -1,0 +1,122 @@
+{
+  "_comment": "가계부를 새로 만들 때 심어주는 기본 분류 트리. 1-6",
+  "version": 1,
+  "categories": [
+    {
+      "kind": "EXPENSE",
+      "name": "食費",
+      "children": [
+        "食料品",
+        "外食",
+        "カフェ・軽食",
+        "デリバリー"
+      ]
+    },
+    {
+      "kind": "EXPENSE",
+      "name": "住居・光熱費",
+      "children": [
+        "家賃・管理費",
+        "電気代",
+        "ガス代",
+        "水道代",
+        "通信費"
+      ]
+    },
+    {
+      "kind": "EXPENSE",
+      "name": "交通費",
+      "children": [
+        "公共交通機関",
+        "タクシー",
+        "ガソリン代",
+        "自動車維持費"
+      ]
+    },
+    {
+      "kind": "EXPENSE",
+      "name": "日用品",
+      "children": [
+        "生活雑貨",
+        "家具・家電",
+        "衣服"
+      ]
+    },
+    {
+      "kind": "EXPENSE",
+      "name": "医療・健康",
+      "children": [
+        "病院",
+        "薬局",
+        "フィットネス"
+      ]
+    },
+    {
+      "kind": "EXPENSE",
+      "name": "教養・娯楽",
+      "children": [
+        "趣味",
+        "旅行",
+        "書籍",
+        "サブスク"
+      ]
+    },
+    {
+      "kind": "EXPENSE",
+      "name": "教育",
+      "children": [
+        "習い事・塾",
+        "教材費"
+      ]
+    },
+    {
+      "kind": "EXPENSE",
+      "name": "交際費",
+      "children": [
+        "冠婚葬祭",
+        "プレゼント"
+      ]
+    },
+    {
+      "kind": "EXPENSE",
+      "name": "保険・税金",
+      "children": [
+        "保険料",
+        "税金"
+      ]
+    },
+    {
+      "kind": "EXPENSE",
+      "name": "その他支出",
+      "children": [
+        "手数料",
+        "未分類"
+      ]
+    },
+    {
+      "kind": "INCOME",
+      "name": "給与",
+      "children": [
+        "月給",
+        "賞与"
+      ]
+    },
+    {
+      "kind": "INCOME",
+      "name": "副収入",
+      "children": [
+        "副業",
+        "利息・配当",
+        "還付金"
+      ]
+    },
+    {
+      "kind": "INCOME",
+      "name": "その他収入",
+      "children": [
+        "お小遣い",
+        "未分類"
+      ]
+    }
+  ]
+}

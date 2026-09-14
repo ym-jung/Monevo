@@ -1,0 +1,37 @@
+@import "../ds/styles.css";
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 120%;
+}
+
+@media (max-width: 1023px) {
+	html {
+		font-size: 100%;
+	}
+}
+
+html,
+body {
+	margin: 0;
+	height: 100%;
+	background: var(--surface-desk);
+}
+
+body {
+	font: var(--type-body);
+	color: var(--text-primary);
+	-webkit-font-smoothing: antialiased;
+}
+
+:root {
+	--safe-bottom: env(safe-area-inset-bottom, 0px);
+	--safe-top: env(safe-area-inset-top, 0px);
+	--z-sheet: 50;
+	--z-drawer: 60;
+}

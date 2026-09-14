@@ -1,0 +1,122 @@
+{
+  "_comment": "가계부를 새로 만들 때 심어주는 기본 분류 트리. 1-6",
+  "version": 1,
+  "categories": [
+    {
+      "kind": "EXPENSE",
+      "name": "Food",
+      "children": [
+        "Groceries",
+        "Dining Out",
+        "Cafe/Snacks",
+        "Delivery"
+      ]
+    },
+    {
+      "kind": "EXPENSE",
+      "name": "Housing/Utilities",
+      "children": [
+        "Rent/Maintenance",
+        "Electricity",
+        "Gas",
+        "Water",
+        "Internet/Phone"
+      ]
+    },
+    {
+      "kind": "EXPENSE",
+      "name": "Transportation",
+      "children": [
+        "Public Transit",
+        "Taxi",
+        "Gasoline",
+        "Car Maintenance"
+      ]
+    },
+    {
+      "kind": "EXPENSE",
+      "name": "Household Items",
+      "children": [
+        "Daily Necessities",
+        "Furniture/Appliances",
+        "Clothing"
+      ]
+    },
+    {
+      "kind": "EXPENSE",
+      "name": "Medical/Health",
+      "children": [
+        "Hospital",
+        "Pharmacy",
+        "Fitness"
+      ]
+    },
+    {
+      "kind": "EXPENSE",
+      "name": "Culture/Leisure",
+      "children": [
+        "Hobbies",
+        "Travel",
+        "Books",
+        "Subscriptions"
+      ]
+    },
+    {
+      "kind": "EXPENSE",
+      "name": "Education",
+      "children": [
+        "Classes/Tutoring",
+        "Materials"
+      ]
+    },
+    {
+      "kind": "EXPENSE",
+      "name": "Events/Gifts",
+      "children": [
+        "Events",
+        "Gifts"
+      ]
+    },
+    {
+      "kind": "EXPENSE",
+      "name": "Insurance/Taxes",
+      "children": [
+        "Insurance",
+        "Taxes"
+      ]
+    },
+    {
+      "kind": "EXPENSE",
+      "name": "Other Expenses",
+      "children": [
+        "Fees",
+        "Uncategorized"
+      ]
+    },
+    {
+      "kind": "INCOME",
+      "name": "Salary",
+      "children": [
+        "Wages",
+        "Bonus"
+      ]
+    },
+    {
+      "kind": "INCOME",
+      "name": "Extra Income",
+      "children": [
+        "Side Hustle",
+        "Interest/Dividends",
+        "Refunds"
+      ]
+    },
+    {
+      "kind": "INCOME",
+      "name": "Other Income",
+      "children": [
+        "Allowance",
+        "Uncategorized"
+      ]
+    }
+  ]
+}

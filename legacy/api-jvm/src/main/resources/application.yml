@@ -1,0 +1,77 @@
+spring:
+  application:
+    name: monevo-api-jvm
+
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    hikari:
+      maximum-pool-size: ${DB_POOL_MAX:10}
+      minimum-idle: ${DB_POOL_MIN:2}
+      connection-timeout: 3000
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 50
+
+  messages:
+    fallback-to-system-locale: false
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    validate-on-migrate: true
+
+app:
+  cognito:
+    region: ${AWS_REGION:us-east-1}
+    user-pool-id: ${COGNITO_USER_POOL_ID}
+    app-client-id: ${COGNITO_APP_CLIENT_ID}
+    issuer: https://cognito-idp.${app.cognito.region}.amazonaws.com/${app.cognito.user-pool-id}
+    jwk-set-uri: ${app.cognito.issuer}/.well-known/jwks.json
+    jwks-cache-ttl: PT12H
+    clock-skew: PT60S
+
+  security:
+    app-user-cache-ttl: PT30S
+
+    rate-limit:
+      enabled: ${RATE_LIMIT_ENABLED:true}
+      user:
+        default: { capacity: 300, window: PT1M }
+        fx: { capacity: 60, window: PT1M }
+        report: { capacity: 60, window: PT1M }
+      ip:
+        default: { capacity: 600, window: PT1M }
+
+  fx:
+    base-url: ${FX_SERVICE_URL:http://localhost:8000}
+    timeout: PT3S
+
+  cors:
+    allowed-origin-patterns: [ ]
+
+server:
+  port: ${SERVER_PORT:8080}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: never
+      probes:
+        enabled: true
+
+logging:
+  level:
+    root: INFO
+    com.monevo: INFO

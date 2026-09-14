@@ -1,0 +1,29 @@
+#!/bin/sh
+set -eu
+
+subject=$(sed -n '1p' "$1")
+
+case "$subject" in
+	"Merge "*|"Revert "*|fixup!*|squash!*) exit 0 ;;
+esac
+
+types='feat|fix|perf|refactor|docs|style|test|build|ci|chore|revert'
+scopes='meta|fx|user|ledger|account|journal|report|admin|web|mobile|infra|db|auth|deps|deps-dev|release'
+
+if ! printf '%s' "$subject" | grep -Eq "^($types)(\(($scopes)\))?!?: .+"; then
+	echo "commit-msg: subject does not follow Conventional Commits" >&2
+	echo >&2
+	echo "  got:      $subject" >&2
+	echo "  expected: <type>(<scope>)!: <subject>" >&2
+	echo >&2
+	echo "  type:  $types" >&2
+	echo "  scope: $scopes  (optional)" >&2
+	echo >&2
+	echo "See docs/13-ci-and-release.md 2." >&2
+	exit 1
+fi
+
+if [ "${#subject}" -gt 72 ]; then
+	echo "commit-msg: subject is ${#subject} characters, limit is 72" >&2
+	exit 1
+fi

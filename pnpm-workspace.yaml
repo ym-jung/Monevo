@@ -1,0 +1,10 @@
+nodeLinker: hoisted
+
+packages:
+  - 'apps/*'
+  - 'services/*'
+  - 'packages/*'
+allowBuilds:
+  esbuild: true
+  sharp: true
+  unrs-resolver: true

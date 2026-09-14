@@ -1,0 +1,6 @@
+[submodule "docs"]
+	path = docs
+	url = https://github.com/ym-jung/Monevo-docs.git
+[submodule "infra"]
+	path = infra
+	url = https://github.com/ym-jung/Monevo-infra.git

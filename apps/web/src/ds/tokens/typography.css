@@ -1,0 +1,49 @@
+:root {
+  --text-9: 0.5625rem;
+  --text-10: 0.625rem;
+  --text-11: 0.6875rem;
+  --text-12: 0.75rem;
+  --text-13: 0.8125rem;
+  --text-16: 1rem;
+  --text-19: 1.1875rem;
+  --text-27: 1.6875rem;
+  --text-31: 1.9375rem;
+
+  --lh-tight: 1.15;
+  --lh-snug: 1.3;
+  --lh-normal: 1.45;
+  --lh-loose: 1.6;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  --tracking-money: -0.02em;
+  --tracking-tight: -0.015em;
+  --tracking-display: 0.36em;
+  --tracking-normal: 0.02em;
+  --tracking-label: 0.14em;
+  --tracking-label-wide: 0.19em;
+
+  --type-slip-title: var(--weight-medium) var(--text-13) / var(--lh-snug) var(--font-mono);
+  --type-slip-meta: var(--weight-regular) var(--text-9) / var(--lh-snug) var(--font-mono);
+
+  --type-label: var(--weight-regular) var(--text-9) / var(--lh-snug) var(--font-mono);
+  --type-label-md: var(--weight-regular) var(--text-10) / var(--lh-snug) var(--font-mono);
+  --type-column-header: var(--weight-regular) var(--text-9) / var(--lh-snug) var(--font-mono);
+
+  --type-title-1: var(--weight-semibold) var(--text-27) / var(--lh-tight) var(--font-display);
+  --type-title-2: var(--weight-semibold) var(--text-19) / var(--lh-snug) var(--font-display);
+  --type-title-3: var(--weight-medium) var(--text-16) / var(--lh-snug) var(--font-mono);
+  --type-headline: var(--weight-medium) var(--text-12) / var(--lh-snug) var(--font-mono);
+  --type-body: var(--weight-regular) var(--text-12) / var(--lh-normal) var(--font-mono);
+  --type-callout: var(--weight-regular) var(--text-11) / var(--lh-normal) var(--font-ui);
+  --type-caption: var(--weight-regular) var(--text-10) / var(--lh-snug) var(--font-mono);
+  --type-prose: var(--weight-regular) var(--text-13) / var(--lh-normal) var(--font-ui);
+
+  --type-money-hero: var(--weight-medium) var(--text-31) / var(--lh-tight) var(--font-mono);
+  --type-money-lg: var(--weight-medium) var(--text-27) / var(--lh-tight) var(--font-mono);
+  --type-money: var(--weight-regular) var(--text-12) / var(--lh-snug) var(--font-mono);
+  --type-money-sm: var(--weight-regular) var(--text-10) / var(--lh-snug) var(--font-mono);
+}

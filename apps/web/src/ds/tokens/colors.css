@@ -1,0 +1,108 @@
+:root {
+  --desk-1: #e6e3dc;
+  --desk-2: #d8d5cd;
+  --desk-3: #c4c0b7;
+
+  --paper-0: #ffffff;
+  --paper-1: #fbfaf7;
+  --paper-2: #f4f2ec;
+  --paper-rule: #dcd7cb;
+  --paper-tear: #bdb8ac;
+
+  --ink-1: #141312;
+  --ink-2: #3a3833;
+  --ink-3: #57544d;
+  --ink-4: #5f5c55;
+  --ink-5: #6b675f;
+  --ink-on-dark-1: #fbfaf7;
+  --ink-on-dark-2: #c4c0b7;
+  --ink-on-dark-3: #9a958b;
+
+  --fab-primary-bg: #56544d;
+
+  --cat-groceries: #4a7d33;
+  --cat-rent: #5b4a8c;
+  --cat-transport: #2d5f9e;
+  --cat-dining: #96501a;
+  --cat-utilities: #6e6a63;
+  --cat-income: #0f7a4a;
+  --cat-transfer: #6f6a5e;
+
+  --debit: #9c2b22;
+  --credit: #0f7a4a;
+
+  --text-primary: var(--ink-1);
+  --text-secondary: var(--ink-3);
+  --text-tertiary: var(--ink-4);
+  --text-disabled: #9a958b;
+  --text-on-accent: var(--paper-1);
+  --text-link: var(--cat-transport);
+
+  --surface-window: var(--paper-1);
+  --surface-paper: var(--paper-1);
+  --surface-desk: var(--desk-2);
+  --surface-sidebar: var(--ink-1);
+  --surface-toolbar: var(--paper-1);
+  --surface-card: var(--paper-1);
+  --surface-sunken: var(--paper-2);
+  --surface-row-alt: var(--paper-1);
+  --surface-sheet: var(--paper-1);
+  --surface-control: var(--paper-1);
+  --surface-control-hover: var(--paper-2);
+  --surface-control-active: var(--desk-1);
+
+  --border-hairline: var(--paper-rule);
+  --border-rule: var(--paper-tear);
+  --border-strong: var(--ink-1);
+  --border-control: var(--ink-3);
+  --border-focus: var(--ink-1);
+
+  --accent: var(--ink-1);
+  --accent-hover: var(--ink-2);
+  --accent-press: #000000;
+  --accent-wash: var(--paper-2);
+
+  --select-active-bg: var(--ink-1);
+  --select-active-fg: var(--paper-1);
+  --select-inactive-bg: var(--desk-1);
+  --select-inactive-fg: var(--ink-1);
+  --focus-ring: 0 0 0 2px var(--paper-1), 0 0 0 3px var(--ink-1);
+
+  --money-income: var(--credit);
+  --money-expense: var(--ink-1);
+  --money-negative: var(--debit);
+  --money-transfer: var(--cat-transfer);
+  --money-zero: var(--ink-4);
+  --fx-badge-bg: transparent;
+  --fx-badge-fg: var(--ink-4);
+
+  --status-success: var(--credit);
+  --status-success-wash: var(--paper-2);
+  --status-warning: var(--cat-dining);
+  --status-warning-wash: var(--paper-2);
+  --status-danger: var(--debit);
+  --status-danger-wash: var(--paper-2);
+  --status-info: var(--cat-transport);
+  --status-info-wash: var(--paper-2);
+  --status-pending: var(--cat-rent);
+  --status-pending-wash: var(--paper-2);
+
+  --gray-0: var(--paper-0);
+  --gray-1: var(--paper-1);
+  --gray-2: var(--paper-2);
+  --gray-3: var(--desk-2);
+  --gray-4: var(--desk-1);
+  --gray-5: var(--desk-3);
+  --gray-6: #a8a29a;
+  --gray-7: var(--ink-4);
+  --gray-8: var(--ink-3);
+  --gray-9: var(--ink-2);
+  --gray-11: var(--ink-1);
+  --tag-red: var(--debit);
+  --tag-orange: var(--cat-dining);
+  --tag-yellow: #b08417;
+  --tag-green: var(--cat-groceries);
+  --tag-blue: var(--cat-transport);
+  --tag-purple: var(--cat-rent);
+  --tag-gray: var(--cat-transfer);
+}

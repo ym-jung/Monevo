@@ -1,0 +1,122 @@
+{
+  "_comment": "가계부를 새로 만들 때 심어주는 기본 분류 트리. 1-6",
+  "version": 1,
+  "categories": [
+    {
+      "kind": "EXPENSE",
+      "name": "식비",
+      "children": [
+        "장보기",
+        "외식",
+        "카페/간식",
+        "배달"
+      ]
+    },
+    {
+      "kind": "EXPENSE",
+      "name": "주거/공과금",
+      "children": [
+        "월세/관리비",
+        "전기",
+        "가스",
+        "수도",
+        "인터넷/통신"
+      ]
+    },
+    {
+      "kind": "EXPENSE",
+      "name": "교통",
+      "children": [
+        "대중교통",
+        "택시",
+        "주유",
+        "차량유지"
+      ]
+    },
+    {
+      "kind": "EXPENSE",
+      "name": "생활용품",
+      "children": [
+        "일용품",
+        "가구/가전",
+        "의류"
+      ]
+    },
+    {
+      "kind": "EXPENSE",
+      "name": "의료/건강",
+      "children": [
+        "병원",
+        "약국",
+        "운동"
+      ]
+    },
+    {
+      "kind": "EXPENSE",
+      "name": "문화/여가",
+      "children": [
+        "취미",
+        "여행",
+        "도서",
+        "구독 서비스"
+      ]
+    },
+    {
+      "kind": "EXPENSE",
+      "name": "교육",
+      "children": [
+        "수업/학원",
+        "교재"
+      ]
+    },
+    {
+      "kind": "EXPENSE",
+      "name": "경조사/선물",
+      "children": [
+        "경조사",
+        "선물"
+      ]
+    },
+    {
+      "kind": "EXPENSE",
+      "name": "보험/세금",
+      "children": [
+        "보험료",
+        "세금"
+      ]
+    },
+    {
+      "kind": "EXPENSE",
+      "name": "기타 지출",
+      "children": [
+        "수수료",
+        "미분류"
+      ]
+    },
+    {
+      "kind": "INCOME",
+      "name": "급여",
+      "children": [
+        "월급",
+        "상여"
+      ]
+    },
+    {
+      "kind": "INCOME",
+      "name": "부수입",
+      "children": [
+        "부업",
+        "이자/배당",
+        "환급"
+      ]
+    },
+    {
+      "kind": "INCOME",
+      "name": "기타 수입",
+      "children": [
+        "용돈",
+        "미분류"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+name: 🐛 버그 리포트
+description: 예상과 다르게 동작하는 부분을 신고합니다
+title: "[Bug] "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        버그를 제보해 주셔서 감사합니다. 아래 항목을 최대한 자세히 작성해 주세요.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 버그 설명
+      description: 어떤 문제가 발생했는지 명확하고 간결하게 설명해 주세요.
+      placeholder: 무엇이 잘못되었나요?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 재현 방법
+      description: 버그를 재현할 수 있는 단계를 순서대로 작성해 주세요.
+      placeholder: |
+        1. '...'로 이동
+        2. '...'를 클릭
+        3. '...'까지 스크롤
+        4. 에러 발생
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 예상 동작
+      description: 정상적으로 동작했다면 어떤 결과가 나와야 하나요?
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: 스크린샷 / 로그
+      description: 문제를 이해하는 데 도움이 되는 스크린샷이나 로그를 첨부해 주세요.
+    validations:
+      required: false
+
+  - type: input
+    id: version
+    attributes:
+      label: 버전
+      description: 사용 중인 소프트웨어/패키지 버전
+      placeholder: 예) v1.2.3
+    validations:
+      required: false
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: 실행 환경
+      multiple: true
+      options:
+        - macOS
+        - Windows
+        - Linux
+        - iOS
+        - Android
+        - 기타
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: 추가 정보
+      description: 그 밖에 참고할 만한 내용이 있다면 작성해 주세요.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 확인 사항
+      options:
+        - label: 동일한 이슈가 이미 등록되어 있지 않은지 검색해 확인했습니다.
+          required: true
+        - label: 최신 버전에서도 동일하게 재현됨을 확인했습니다.
+          required: false

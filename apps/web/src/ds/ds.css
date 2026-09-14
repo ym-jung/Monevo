@@ -1,0 +1,186 @@
+.ds-button:focus-visible,
+.ds-icon-button:focus-visible,
+.ds-select:focus-visible,
+.ds-segment:focus-visible,
+.ds-focusable:focus-visible,
+.ds-input:focus-within {
+	outline: none;
+	box-shadow: var(--focus-ring);
+}
+
+.ds-input:focus-within {
+	border-color: var(--border-focus);
+}
+
+@media (hover: hover) {
+
+.ds-button:not(:disabled):hover,
+.ds-select:not(:disabled):hover {
+	background: var(--surface-control-hover);
+}
+
+.ds-button:not(:disabled):active,
+.ds-select:not(:disabled):active {
+	background: var(--surface-control-active);
+}
+
+.ds-button[data-variant="primary"]:not(:disabled):hover {
+	background: var(--accent-hover);
+}
+
+.ds-button[data-variant="primary"]:not(:disabled):active {
+	background: var(--accent-press);
+}
+
+.ds-icon-button:not(:disabled):hover {
+	background: var(--surface-control-hover);
+	color: var(--text-primary);
+}
+
+.ds-icon-button:not(:disabled):active {
+	background: var(--surface-control-active);
+}
+
+.ds-segment:hover {
+	background: var(--surface-control-hover);
+}
+
+.ds-list-row:not(.is-selected):hover {
+	background: var(--surface-control-hover);
+}
+
+}
+
+.ds-fab {
+	transition:
+		transform var(--dur-fast) var(--ease-out),
+		box-shadow var(--dur-fast) var(--ease-out),
+		background-color var(--dur-fast) var(--ease-standard),
+		border-color var(--dur-fast) var(--ease-standard);
+}
+
+@media (hover: hover) {
+	.ds-fab:hover {
+		transform: translateY(-2px);
+		box-shadow: var(--shadow-paper), var(--shadow-popover);
+	}
+}
+
+.ds-fab:active {
+	transform: translateY(0) scale(0.94);
+	box-shadow: var(--shadow-paper);
+	transition-duration: var(--dur-instant);
+}
+
+.ds-fab.is-firing {
+	animation: ds-fab-fire var(--dur-slow) var(--ease-out);
+}
+
+@keyframes ds-fab-fire {
+	0% { transform: scale(0.94); }
+	45% { transform: scale(1.08); }
+	100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.ds-fab,
+	.ds-fab:hover,
+	.ds-fab:active {
+		transform: none;
+		transition: background-color var(--dur-fast) var(--ease-standard);
+	}
+
+	.ds-fab.is-firing {
+		animation: none;
+	}
+}
+
+a {
+	color: var(--text-link);
+	text-decoration: none;
+}
+
+@media (hover: hover) {
+	a:hover {
+		text-decoration: underline;
+	}
+}
+
+:root:lang(ja),
+:root:lang(ko) {
+	--tracking-label: 0;
+	--tracking-label-wide: 0;
+	--tracking-display: 0;
+
+	--month-label-width: 5.75rem;
+}
+
+@media (max-width: 767px) {
+	:root {
+		--control-height: 2.5rem;
+		--control-height-lg: 2.75rem;
+		--sidebar-row-height: 2.75rem;
+		--row-height-comfortable: 2.75rem;
+	}
+
+	.ds-icon-button {
+		min-width: 2.75rem;
+		min-height: 2.75rem;
+	}
+
+	.ds-input input,
+	.ds-input textarea,
+	.ds-select,
+	input,
+	textarea,
+	select {
+		font-size: 1rem !important;
+	}
+}
+
+@keyframes ds-sheet-up {
+	from { transform: translateY(100%); }
+	to { transform: translateY(0); }
+}
+
+@keyframes ds-drawer-in {
+	from { transform: translateX(-100%); }
+	to { transform: translateX(0); }
+}
+
+@keyframes ds-scrim-in {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+.ds-sheet-panel {
+	animation: ds-sheet-up var(--dur-sheet) var(--ease-sheet) both;
+}
+
+.ds-drawer-panel {
+	animation: ds-drawer-in var(--dur-sheet) var(--ease-sheet) both;
+}
+
+.ds-scrim {
+	animation: ds-scrim-in var(--dur-base) var(--ease-standard) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.ds-sheet-panel,
+	.ds-drawer-panel,
+	.ds-scrim {
+		animation: none;
+	}
+}
+
+.ds-sheet-actions {
+	display: contents;
+}
+
+.ds-sheet-actions > * {
+	flex: 1;
+}
+
+.ds-sheet-actions > *:last-child {
+	flex: 2;
+}

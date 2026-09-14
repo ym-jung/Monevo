@@ -1,0 +1,8 @@
+:root {
+  --font-mono: "JetBrains Mono Variable", "Noto Sans KR Variable", "Noto Sans JP Variable", ui-monospace, Menlo, monospace;
+  --font-system: "Schibsted Grotesk Variable", "Noto Sans KR Variable", "Noto Sans JP Variable", system-ui, sans-serif;
+
+  --font-display: var(--font-system);
+  --font-ui: var(--font-system);
+  --font-numeric: var(--font-mono);
+}

@@ -1,0 +1,17 @@
+:root {
+  --radius-none: 0px;
+  --radius-xs: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-panel: 0px;
+  --radius-sheet: 0px;
+  --radius-window: 6px;
+  --radius-full: 999px;
+
+  --radius-chip: 0px;
+  --radius-control: 0px;
+  --radius-badge: 0px;
+  --radius-box: 0px;
+  --radius-selection: 0px;
+}

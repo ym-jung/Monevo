@@ -1,0 +1,120 @@
+name: build
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_call:
+    inputs:
+      run_all:
+        description: Run verification for every service
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      frontend: ${{ steps.filter.outputs.frontend }}
+      workspace: ${{ steps.filter.outputs.workspace }}
+
+    steps:
+      - if: ${{ !inputs.run_all }}
+        uses: actions/checkout@v7
+
+      - if: ${{ !inputs.run_all }}
+        id: filter
+        uses: dorny/paths-filter@v4
+        with:
+          filters: |
+            frontend:
+              - "apps/web/**"
+              - "packages/**"
+              - "pnpm-lock.yaml"
+              - "amplify.yml"
+              - ".github/workflows/build.yml"
+
+            workspace:
+              - "packages/**"
+              - "services/**"
+              - "pnpm-lock.yaml"
+              - ".github/workflows/build.yml"
+
+  frontend:
+    needs: changes
+    if: ${{ inputs.run_all || needs.changes.outputs.frontend == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: apps/web
+    env:
+      AWS_REGION: us-east-1
+      COGNITO_USER_POOL_ID: us-east-1_ci
+      COGNITO_APP_CLIENT_ID: ci-client
+      APP_ENV: dev
+      BACKEND_API_URL: http://localhost:8080
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: pnpm/action-setup@v6
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - run: pnpm install --frozen-lockfile
+        working-directory: .
+
+      - run: pnpm run lint
+
+      - run: pnpm run build
+
+  workspace:
+    needs: changes
+    if: ${{ inputs.run_all || needs.changes.outputs.workspace == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: pnpm/action-setup@v6
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm -r typecheck
+
+      - run: pnpm -r lint
+
+      - run: pnpm -r test
+
+  verified:
+    if: always()
+    needs: [changes, frontend, workspace]
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          for r in ${{ join(needs.*.result, ' ') }}; do
+            case "$r" in
+              success|skipped) ;;
+              *) echo "a needed job reported $r"; exit 1 ;;
+            esac
+          done
+          echo "all needed jobs succeeded or were skipped"

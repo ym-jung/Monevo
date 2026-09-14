@@ -1,0 +1,19 @@
+:root {
+  --shadow-none: none;
+  --shadow-control: none;
+  --shadow-card: none;
+  --shadow-paper: 0 16px 34px rgba(0, 0, 0, 0.10);
+  --shadow-popover: 0 10px 26px rgba(0, 0, 0, 0.14);
+  --shadow-sheet: 0 -8px 34px rgba(0, 0, 0, 0.14);
+  --shadow-window: 0 20px 54px rgba(0, 0, 0, 0.22);
+
+  --rule-row: 1px dotted var(--paper-rule);
+  --rule-section: 1px dashed var(--paper-tear);
+  --rule-total: 1px solid var(--ink-1);
+
+  --tear-edge: repeating-linear-gradient(90deg, var(--paper-1) 0 7px, transparent 7px 14px);
+
+  --blur-chrome: none;
+  --blur-sheet: none;
+  --scrim: rgba(20, 19, 18, 0.34);
+}

@@ -1,0 +1,23 @@
+{
+	"name": "@monevo/contracts",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"exports": { ".": "./src/index.ts" },
+	"scripts": {
+		"lint": "eslint",
+		"test": "vitest run --passWithNoTests",
+		"typecheck": "tsc --noEmit"
+	},
+	"dependencies": {
+		"zod": "^4.5.4"
+	},
+	"devDependencies": {
+		"@monevo/eslint-config": "workspace:*",
+		"@monevo/tsconfig": "workspace:*",
+		"@types/node": "^26",
+		"eslint": "^9",
+		"typescript": "^5",
+		"vitest": "^5.0.0"
+	}
+}

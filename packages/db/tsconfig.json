@@ -1,0 +1,4 @@
+{
+	"extends": ["../../tsconfig.base.json", "@monevo/tsconfig/lambda.json"],
+	"include": ["src", "test", "drizzle.config.ts"]
+}

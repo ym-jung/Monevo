@@ -1,0 +1,22 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    enabled: true
+
+app:
+  cognito:
+    region: ap-northeast-1
+    user-pool-id: ap-northeast-1_testPool0
+    app-client-id: test-client-id
+  security:
+    app-user-cache-ttl: PT30S
+    rate-limit:
+      enabled: false
+  cors:
+    allowed-origin-patterns: [ ]
+
+logging:
+  level:
+    com.monevo: DEBUG

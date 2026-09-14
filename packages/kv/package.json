@@ -1,0 +1,30 @@
+{
+	"name": "@monevo/kv",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"exports": {
+		".": "./src/index.ts"
+	},
+	"scripts": {
+		"lint": "eslint",
+		"test": "vitest run --passWithNoTests",
+		"typecheck": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@monevo/http": "workspace:*",
+		"hono": "^4.13.7"
+	},
+	"peerDependencies": {
+		"@aws-sdk/client-dynamodb": "^3"
+	},
+	"devDependencies": {
+		"@aws-sdk/client-dynamodb": "^3",
+		"@monevo/eslint-config": "workspace:*",
+		"@monevo/tsconfig": "workspace:*",
+		"@types/node": "^26",
+		"eslint": "^9",
+		"typescript": "^5",
+		"vitest": "^5.0.0"
+	}
+}

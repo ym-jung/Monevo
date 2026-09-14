@@ -1,0 +1,39 @@
+{
+	"name": "@monevo/web",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "eslint",
+		"lint:ds": "eslint src",
+		"icons": "node scripts/copy-icons.mjs",
+		"postinstall": "node scripts/copy-icons.mjs",
+		"test:e2e": "playwright test",
+		"test:e2e:ui": "playwright test --ui"
+	},
+	"dependencies": {
+		"@aws-amplify/adapter-nextjs": "^1.6.7",
+		"@fontsource-variable/jetbrains-mono": "^5.3.0",
+		"@fontsource-variable/noto-sans-jp": "^5.3.0",
+		"@fontsource-variable/noto-sans-kr": "^5.3.0",
+		"@fontsource-variable/schibsted-grotesk": "^5.3.0",
+		"aws-amplify": "^6.15.6",
+		"next": "15.5.25",
+		"react": "19.2.8",
+		"react-dom": "19.2.8",
+		"server-only": "^0.0.1"
+	},
+	"devDependencies": {
+		"@eslint/eslintrc": "^3",
+		"@playwright/test": "^1.62.1",
+		"@types/node": "^26",
+		"@types/react": "^19",
+		"@types/react-dom": "^19",
+		"eslint": "^9",
+		"eslint-config-next": "15.5.25",
+		"lucide-static": "1.40.0",
+		"typescript": "^5"
+	}
+}

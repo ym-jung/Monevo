@@ -1,0 +1,33 @@
+{
+	"name": "@monevo/db",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"exports": {
+		".": "./src/index.ts"
+	},
+	"scripts": {
+		"lint": "eslint",
+		"test": "vitest run --passWithNoTests",
+		"typecheck": "tsc --noEmit",
+		"pull": "drizzle-kit pull && node scripts/normalize-schema.mjs"
+	},
+	"dependencies": {
+		"drizzle-orm": "^0.44.7",
+		"postgres": "^3.4.7",
+		"uuidv7": "^1.0.2"
+	},
+	"devDependencies": {
+		"@aws-sdk/client-ssm": "^3",
+		"@monevo/eslint-config": "workspace:*",
+		"@monevo/tsconfig": "workspace:*",
+		"@types/node": "^26",
+		"drizzle-kit": "^0.31.6",
+		"eslint": "^9",
+		"typescript": "^5",
+		"vitest": "^5.0.0"
+	},
+	"peerDependencies": {
+		"@aws-sdk/client-ssm": "^3"
+	}
+}

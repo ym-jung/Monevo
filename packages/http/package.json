@@ -1,0 +1,23 @@
+{
+	"name": "@monevo/http",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"exports": { ".": "./src/index.ts" },
+	"scripts": {
+		"lint": "eslint",
+		"test": "vitest run --passWithNoTests",
+		"typecheck": "tsc --noEmit"
+	},
+	"dependencies": {
+		"hono": "^4.13.7"
+	},
+	"devDependencies": {
+		"@monevo/eslint-config": "workspace:*",
+		"@monevo/tsconfig": "workspace:*",
+		"@types/node": "^26",
+		"eslint": "^9",
+		"typescript": "^5",
+		"vitest": "^5.0.0"
+	}
+}
