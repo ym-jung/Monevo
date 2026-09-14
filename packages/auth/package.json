@@ -12,7 +12,7 @@
 	"dependencies": {
 		"@monevo/db": "workspace:*",
 		"@monevo/http": "workspace:*",
-		"drizzle-orm": "^0.44.7",
+		"drizzle-orm": "^0.45.2",
 		"hono": "^4.13.7",
 		"jose": "^6.1.0"
 	},
