@@ -16,7 +16,7 @@
 		"@monevo/http": "workspace:*",
 		"@monevo/kv": "workspace:*",
 		"@monevo/money": "workspace:*",
-		"drizzle-orm": "^0.44.7",
+		"drizzle-orm": "^0.45.2",
 		"hono": "^4.13.7"
 	},
 	"devDependencies": {
