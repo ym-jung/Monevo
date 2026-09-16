@@ -18,8 +18,9 @@ export default async function LedgerPage({params}: { params: Promise<{ ledgerId:
     const month = monthOf();
     const range = monthRange(month);
 
-    const [accounts, categories, summary, page] = await Promise.all([
+    const [accounts, ownedAccounts, categories, summary, page] = await Promise.all([
         apiGet<AccountDetail[]>("accounts", {query: {ledgerId, includeArchived: false}}),
+        apiGet<AccountDetail[]>("accounts", {query: {includeArchived: true}}),
         apiGet<CategoryNode[]>(`ledgers/${ledgerId}/categories`),
         apiGet<MonthlySummary>(`ledgers/${ledgerId}/summary`, {query: {month}}).catch(() => null),
         apiGet<PageResponse<JournalEntrySummary>>("journal-entries", {
@@ -32,7 +33,7 @@ export default async function LedgerPage({params}: { params: Promise<{ ledgerId:
             ledgers={ledgers}
             initialLedgerId={ledgerId}
             viewer={user}
-            initial={{month, accounts, categories, summary, page}}
+            initial={{month, accounts, ownedAccounts, categories, summary, page}}
         />
     );
 }

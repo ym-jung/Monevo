@@ -17,6 +17,7 @@ export interface LedgerDataInput {
 	categoryIds: string[];
 	initial: {
 		accounts: AccountDetail[];
+		ownedAccounts: AccountDetail[];
 		categories: CategoryNode[];
 		summary: MonthlySummary | null;
 	};
@@ -34,6 +35,7 @@ export function useLedgerData(input: LedgerDataInput) {
 	} = input;
 
 	const [accounts, setAccounts] = useState<AccountDetail[]>(initial.accounts);
+	const [ownedAccounts, setOwnedAccounts] = useState<AccountDetail[]>(initial.ownedAccounts);
 	const [categories, setCategories] = useState<CategoryNode[]>(initial.categories);
 	const [summary, setSummary] = useState<MonthlySummary | null>(initial.summary);
 
@@ -44,10 +46,11 @@ export function useLedgerData(input: LedgerDataInput) {
 		if (loadedLedgerId.current === ledgerId) return;
 		loadedLedgerId.current = ledgerId;
 		let cancelled = false;
-		Promise.all([listAccounts(ledgerId), listCategories(ledgerId)])
-			.then(([nextAccounts, nextCategories]) => {
+		Promise.all([listAccounts(ledgerId), listAccounts(undefined, true), listCategories(ledgerId)])
+			.then(([nextAccounts, nextOwned, nextCategories]) => {
 				if (cancelled) return;
 				setAccounts(nextAccounts);
+				setOwnedAccounts(nextOwned);
 				setCategories(nextCategories);
 			})
 			.catch(() => {});
@@ -76,12 +79,14 @@ export function useLedgerData(input: LedgerDataInput) {
 	}, [ledgerId, month, accountIds, categoryIds]);
 
 	async function refresh() {
-		const [nextAccounts, nextCategories] = await Promise.all([listAccounts(ledgerId), listCategories(ledgerId)]);
+		const [nextAccounts, nextOwned, nextCategories] = await Promise.all([
+			listAccounts(ledgerId), listAccounts(undefined, true), listCategories(ledgerId)]);
 		const nextAccountIds = accountIds.filter((id) => nextAccounts.some((account) => account.id === id));
 		const nextCategoryIds = categoryIds.filter(
 			(id) => flattenCategories(nextCategories).some((category) => category.id === id));
 
 		setAccounts(nextAccounts);
+		setOwnedAccounts(nextOwned);
 		setCategories(nextCategories);
 		onFiltersPruned(nextAccountIds, nextCategoryIds);
 
@@ -95,5 +100,5 @@ export function useLedgerData(input: LedgerDataInput) {
 		).then(setSummary).catch(() => setSummary(null));
 	}
 
-	return { accounts, categories, summary, refresh };
+	return { accounts, ownedAccounts, categories, summary, refresh };
 }

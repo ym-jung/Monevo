@@ -60,6 +60,7 @@ export interface LedgerWindowProps {
 	initial: {
 		month: string;
 		accounts: AccountDetail[];
+		ownedAccounts: AccountDetail[];
 		categories: CategoryNode[];
 		summary: MonthlySummary | null;
 		page: PageResponse<JournalEntrySummary>;
@@ -98,7 +99,7 @@ export function LedgerWindow({ ledgers, initialLedgerId, viewer, initial }: Ledg
 
 	const [modal, setModal] = useState<LedgerModal | null>(null);
 
-	const { accounts, categories, summary, refresh } = useLedgerData({
+	const { accounts, ownedAccounts, categories, summary, refresh } = useLedgerData({
 		ledgerId,
 		initialLedgerId,
 		month,
@@ -352,6 +353,7 @@ export function LedgerWindow({ ledgers, initialLedgerId, viewer, initial }: Ledg
 						ledger={ledger}
 						viewerId={viewer.id}
 						accounts={accounts}
+						ownedAccounts={ownedAccounts}
 						categories={categories}
 						summary={summary}
 						month={month}
@@ -362,6 +364,7 @@ export function LedgerWindow({ ledgers, initialLedgerId, viewer, initial }: Ledg
 						onNewAccount={() => setModal({ kind: "new-account" })}
 						onManageLinks={() => setModal({ kind: "account-links" })}
 						onEditAccount={(account) => setModal({ kind: "edit-account", account })}
+						onAccountsChanged={refreshAll}
 						onNewCategory={() => setModal({ kind: "new-category" })}
 						onEditCategory={(category) => setModal({ kind: "edit-category", category })}
 						onLeft={() => router.push("/")}
@@ -519,6 +522,7 @@ export function LedgerWindow({ ledgers, initialLedgerId, viewer, initial }: Ledg
 						ledger={ledger}
 						viewerId={viewer.id}
 						accounts={accounts}
+						ownedAccounts={ownedAccounts}
 						categories={categories}
 						summary={summary}
 						month={month}
@@ -529,6 +533,7 @@ export function LedgerWindow({ ledgers, initialLedgerId, viewer, initial }: Ledg
 						onNewAccount={() => setModal({ kind: "new-account" })}
 						onManageLinks={() => setModal({ kind: "account-links" })}
 						onEditAccount={(account) => setModal({ kind: "edit-account", account })}
+						onAccountsChanged={refreshAll}
 						onNewCategory={() => setModal({ kind: "new-category" })}
 						onEditCategory={(category) => setModal({ kind: "edit-category", category })}
 						onLeft={() => router.push("/")}

@@ -15,6 +15,7 @@ export interface LedgerPanelsProps {
 	ledger: LedgerDetail;
 	viewerId: string;
 	accounts: AccountDetail[];
+	ownedAccounts: AccountDetail[];
 	categories: CategoryNode[];
 	summary: MonthlySummary | null;
 	month: string;
@@ -25,6 +26,7 @@ export interface LedgerPanelsProps {
 	onNewAccount: () => void;
 	onManageLinks: () => void;
 	onEditAccount: (account: AccountDetail) => void;
+	onAccountsChanged: () => void | Promise<void>;
 	onNewCategory: () => void;
 	onEditCategory: (category: CategoryNode) => void;
 	onLeft: () => void;
@@ -36,10 +38,13 @@ export function LedgerPanels(props: LedgerPanelsProps) {
 		return (
 			<AccountsPanel
 				accounts={props.accounts}
+				ownedAccounts={props.ownedAccounts}
+				ledgerId={props.ledger.id}
 				viewerId={props.viewerId}
 				onNew={props.onNewAccount}
 				onManageLinks={props.onManageLinks}
 				onEdit={props.onEditAccount}
+				onChanged={props.onAccountsChanged}
 			/>
 		);
 	}
