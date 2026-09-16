@@ -215,6 +215,7 @@ export function AccountLinksDialog({
 	const initiallyLinked = new Set(ledgerAccounts.map((account) => account.id));
 	const connected = ownedAccounts.filter((account) => initiallyLinked.has(account.id));
 	const available = ownedAccounts.filter((account) => !initiallyLinked.has(account.id) && !account.archived);
+	const hiddenArchived = ownedAccounts.some((account) => account.archived && !initiallyLinked.has(account.id));
 
 	function toggle(id: string, checked: boolean) {
 		setSelected((current) => {
@@ -276,6 +277,11 @@ export function AccountLinksDialog({
 					<div style={{ display: "flex", flexDirection: "column", gap: "var(--space-7)" }}>
 						{group(t("account.linked"), connected, t("account.noLinkedOwned"))}
 						{group(t("account.available"), available, t("account.noAvailable"))}
+						{hiddenArchived ? (
+							<p style={{ margin: 0, font: "var(--type-prose)", color: "var(--text-tertiary)", textWrap: "pretty" }}>
+								{t("account.archivedHint")}
+							</p>
+						) : null}
 					</div>
 				)}
 			</Modal>
