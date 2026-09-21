@@ -13,7 +13,7 @@
 	},
 	"dependencies": {
 		"@monevo/http": "workspace:*",
-		"hono": "^4.13.7"
+		"hono": "^4.13.8"
 	},
 	"peerDependencies": {
 		"@aws-sdk/client-dynamodb": "^3"
@@ -25,6 +25,6 @@
 		"@types/node": "^26",
 		"eslint": "^9",
 		"typescript": "^5",
-		"vitest": "^5.0.0"
+		"vitest": "^5.0.1"
 	}
 }

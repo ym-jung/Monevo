@@ -10,7 +10,7 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
-		"hono": "^4.13.7"
+		"hono": "^4.13.8"
 	},
 	"devDependencies": {
 		"@monevo/eslint-config": "workspace:*",
@@ -18,6 +18,6 @@
 		"@types/node": "^26",
 		"eslint": "^9",
 		"typescript": "^5",
-		"vitest": "^5.0.0"
+		"vitest": "^5.0.1"
 	}
 }
