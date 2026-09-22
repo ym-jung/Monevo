@@ -8,7 +8,7 @@ import { useState } from "react";
 import { Button, Input, Select } from "@/ds";
 import type { MessageKey } from "@/lib/i18n/messages/en";
 import { useLocale, useT } from "@/lib/i18n/provider";
-import { useCurrencies } from "@/lib/money/currency";
+import { useCurrencyOptions } from "@/lib/money/currency";
 
 import { cognitoMessage } from "./errors";
 import { defaultTimezone, LOCALE_OPTIONS, TIMEZONE_OPTIONS } from "./options";
@@ -30,7 +30,7 @@ function passwordProblems(password: string): MessageKey[] {
 export function SignUpForm() {
 	const t = useT();
 	const router = useRouter();
-	const currencies = useCurrencies();
+	const currencyOptions = useCurrencyOptions();
 	const [email, setEmail] = useState("");
 	const [name, setName] = useState("");
 	const [password, setPassword] = useState("");
@@ -65,7 +65,6 @@ export function SignUpForm() {
 		}
 	}
 
-	const currencyOptions = currencies.map((c) => ({ value: c.code, label: `${c.code} · ${c.nameEn}` }));
 
 	return (
 		<Slip footer={<span style={TIGHT_LABEL}>{t("auth.haveAccount")} <Link href="/sign-in">{t("auth.signIn")}</Link></span>}>

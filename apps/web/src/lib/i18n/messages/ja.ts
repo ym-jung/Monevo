@@ -360,4 +360,23 @@ export const ja: Messages = {
 	"nav.menu": "メニュー",
 	"nav.closeMenu": "メニューを閉じる",
 	"nav.details": "詳細",
+
+	// Server error codes. A code with no entry here falls back to the message
+	// the server sent, so adding one is never the difference between text and
+	// a blank — only between the reader's language and English.
+	"error.LEDGER_CURRENCY_CONFIRM_REQUIRED": "基準通貨は後から変更できません。確認のうえ進めてください。",
+	"error.LEDGER_NOT_MEMBER": "この家計簿のメンバーではありません。",
+	"error.LEDGER_OWNER_REQUIRED": "オーナーのみ実行できます。",
+	"error.LEDGER_OWNER_CANNOT_LEAVE": "退出する前に所有権を他のメンバーに移してください。",
+	"error.INVITE_NOT_FOUND": "この招待コードは使用できません。",
+	"error.INVITE_EXHAUSTED": "この招待コードは使い切られています。",
+	"error.INVITE_ALREADY_MEMBER": "すでにこの家計簿のメンバーです。",
+	"error.ACCOUNT_HAS_TRANSACTIONS": "取引のある口座は削除できません。アーカイブしてください。",
+	"error.CATEGORY_HAS_TRANSACTIONS": "取引のある分類は削除できません。",
+	"error.CATEGORY_HAS_CHILDREN": "先に下位の分類を整理してください。",
+	"error.JOURNAL_ENTRY_UNBALANCED": "貸借の金額が一致していません。",
+	"error.TRANSACTION_AMOUNT_INVALID": "0 より大きい金額を入力してください。",
+	"error.CURRENCY_NOT_SUPPORTED": "対応していない通貨です。",
+	"error.FX_RATE_UNAVAILABLE": "その日の為替レートを取得できませんでした。手入力してください。",
+	"error.VALIDATION_FAILED": "表示された項目を確認してください。",
 };

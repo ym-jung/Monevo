@@ -9,7 +9,7 @@ import { ApiError } from "@/lib/api/errors";
 import type { UserSummary } from "@/lib/api/types";
 import { LOCALE_COOKIE } from "@/lib/i18n/locales";
 import { useT } from "@/lib/i18n/provider";
-import { useCurrencies } from "@/lib/money/currency";
+import { useCurrencyOptions } from "@/lib/money/currency";
 
 import { updateMe } from "./api";
 import { LOCALE_OPTIONS, TIMEZONE_OPTIONS } from "./options";
@@ -20,7 +20,7 @@ const LIMITS = { email: 255, displayName: 60, timezone: 64 };
 export function ProfileForm({ user }: { user: UserSummary }) {
 	const t = useT();
 	const router = useRouter();
-	const currencies = useCurrencies();
+	const currencyOptions = useCurrencyOptions();
 
 	const [email, setEmail] = useState(user.email);
 	const [displayName, setDisplayName] = useState(user.displayName);
@@ -67,7 +67,6 @@ export function ProfileForm({ user }: { user: UserSummary }) {
 		}
 	}
 
-	const currencyOptions = currencies.map((c) => ({ value: c.code, label: `${c.code} · ${c.nameEn}` }));
 
 	return (
 		<Slip

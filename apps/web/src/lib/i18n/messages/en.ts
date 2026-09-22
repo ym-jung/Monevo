@@ -358,6 +358,25 @@ export const en = {
 	"nav.menu": "Menu",
 	"nav.closeMenu": "Close menu",
 	"nav.details": "Details",
+
+	// Server error codes. A code with no entry here falls back to the message
+	// the server sent, so adding one is never the difference between text and
+	// a blank — only between the reader's language and English.
+	"error.LEDGER_CURRENCY_CONFIRM_REQUIRED": "The base currency cannot be changed later. Confirm before continuing.",
+	"error.LEDGER_NOT_MEMBER": "You are not a member of this ledger.",
+	"error.LEDGER_OWNER_REQUIRED": "Only the owner can do this.",
+	"error.LEDGER_OWNER_CANNOT_LEAVE": "Transfer ownership before leaving.",
+	"error.INVITE_NOT_FOUND": "That invite code is not valid.",
+	"error.INVITE_EXHAUSTED": "That invite code has already been used up.",
+	"error.INVITE_ALREADY_MEMBER": "You are already a member of this ledger.",
+	"error.ACCOUNT_HAS_TRANSACTIONS": "This account has transactions, so it cannot be deleted. Archive it instead.",
+	"error.CATEGORY_HAS_TRANSACTIONS": "This category has transactions, so it cannot be deleted.",
+	"error.CATEGORY_HAS_CHILDREN": "Remove the sub-categories first.",
+	"error.JOURNAL_ENTRY_UNBALANCED": "The amounts on both sides do not match.",
+	"error.TRANSACTION_AMOUNT_INVALID": "Enter an amount greater than zero.",
+	"error.CURRENCY_NOT_SUPPORTED": "That currency is not supported.",
+	"error.FX_RATE_UNAVAILABLE": "No exchange rate is available for that day. Enter one by hand.",
+	"error.VALIDATION_FAILED": "Check the highlighted fields.",
 } as const;
 
 export type MessageKey = keyof typeof en;

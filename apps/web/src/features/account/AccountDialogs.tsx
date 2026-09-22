@@ -6,7 +6,7 @@ import { Button, Checkbox, Input, Select } from "@/ds";
 import type { AccountDetail, AccountType, LedgerDetail } from "@/lib/api/types";
 import type { MessageKey } from "@/lib/i18n/messages/en";
 import { useT } from "@/lib/i18n/provider";
-import { useCurrencies, useMinorUnitExponent } from "@/lib/money/currency";
+import { useCurrencyOptions, useMinorUnitExponent } from "@/lib/money/currency";
 
 import { DialogError, DialogField, toMinor } from "@/features/common/DialogForm";
 import { Modal } from "@/features/common/Modal";
@@ -26,7 +26,7 @@ function isValidOpeningBalanceInput(value: string, exponent: number): boolean {
 
 export function NewAccountDialog({ ledger, onClose, onSaved }: { ledger: LedgerDetail; onClose: () => void; onSaved: () => void }) {
 	const t = useT();
-	const currencies = useCurrencies();
+	const currencyOptions = useCurrencyOptions();
 	const [name, setName] = useState("");
 	const [type, setType] = useState<AccountType>("BANK");
 	const [currency, setCurrency] = useState(ledger.currency);
@@ -77,7 +77,7 @@ export function NewAccountDialog({ ledger, onClose, onSaved }: { ledger: LedgerD
 					<Select value={type} onChange={(v) => setType(v as AccountType)} options={TYPES.map((value) => ({ value, label: t(typeKey(value)) }))} />
 				</DialogField>
 				<DialogField label={t("slip.currency")} note={t("account.currencyFixedNote")}>
-					<Select value={currency} onChange={setCurrency} options={currencies.map((c) => ({ value: c.code, label: `${c.code} · ${c.nameEn}` }))} />
+					<Select value={currency} onChange={setCurrency} options={currencyOptions} />
 				</DialogField>
 				<DialogField label={t("account.opening")} note={t("account.openingNote")}>
 					<div style={{ display: "flex", alignItems: "center", gap: "var(--space-5)" }}>

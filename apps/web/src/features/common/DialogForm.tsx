@@ -3,7 +3,7 @@
 import { cloneElement, isValidElement, useId, type ReactElement, type ReactNode } from "react";
 
 import { ApiError } from "@/lib/api/errors";
-import { useT } from "@/lib/i18n/provider";
+import { useT, useErrorMessage } from "@/lib/i18n/provider";
 import { usePhone } from "@/lib/viewport/provider";
 
 const FIELD_GRID = "5.75rem 1fr";
@@ -36,12 +36,13 @@ export function DialogField({ label, children, note }: { label: string; children
 
 export function DialogError({ error }: { error: unknown }) {
 	const t = useT();
+	const describe = useErrorMessage();
 	if (!error) return null;
 
 	let text: string;
 	if (error instanceof ApiError) {
 
-		text = error.code === "CONCURRENT_MODIFICATION" ? t("common.staleWrite") : error.message;
+		text = error.code === "CONCURRENT_MODIFICATION" ? t("common.staleWrite") : describe(error);
 	} else {
 		text = t("common.genericError");
 	}
