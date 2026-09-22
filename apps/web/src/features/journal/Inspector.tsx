@@ -3,9 +3,8 @@
 import { useEffect, useMemo, useState } from "react";
 
 import { Avatar, Button, EmptyState, IconButton, Tag } from "@/ds";
-import { ApiError } from "@/lib/api/errors";
 import type { JournalEntryDetail, JournalLineView } from "@/lib/api/types";
-import { useLocale, useT } from "@/lib/i18n/provider";
+import { useLocale, useT, useErrorMessage } from "@/lib/i18n/provider";
 import { Amount } from "@/lib/money/currency";
 import { usePhone } from "@/lib/viewport/provider";
 
@@ -62,6 +61,7 @@ export function Inspector({ width, entryId, inkOf, onEdit, onClose }: {
 	onClose?: () => void;
 }) {
 	const t = useT();
+	const describe = useErrorMessage();
 	const locale = useLocale();
 	const dateTime = useMemo(() => new Intl.DateTimeFormat(locale, {
 		dateStyle: "medium",
@@ -113,7 +113,7 @@ export function Inspector({ width, entryId, inkOf, onEdit, onClose }: {
 	}
 
 	if (error) {
-		return frame(<EmptyState icon="circle-x" title={error instanceof ApiError ? error.message : t("inspector.loadFailed")} />);
+		return frame(<EmptyState icon="circle-x" title={describe(error, t("inspector.loadFailed"))} />);
 	}
 
 	if (!entry) {

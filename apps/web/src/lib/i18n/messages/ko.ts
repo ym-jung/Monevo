@@ -360,4 +360,23 @@ export const ko: Messages = {
 	"nav.menu": "메뉴",
 	"nav.closeMenu": "메뉴 닫기",
 	"nav.details": "상세",
+
+	// Server error codes. A code with no entry here falls back to the message
+	// the server sent, so adding one is never the difference between text and
+	// a blank — only between the reader's language and English.
+	"error.LEDGER_CURRENCY_CONFIRM_REQUIRED": "기준 통화는 나중에 바꿀 수 없습니다. 확인란을 선택한 뒤 진행해 주세요.",
+	"error.LEDGER_NOT_MEMBER": "이 가계부의 멤버가 아닙니다.",
+	"error.LEDGER_OWNER_REQUIRED": "소유자만 할 수 있습니다.",
+	"error.LEDGER_OWNER_CANNOT_LEAVE": "나가기 전에 소유권을 다른 멤버에게 넘겨 주세요.",
+	"error.INVITE_NOT_FOUND": "사용할 수 없는 초대 코드입니다.",
+	"error.INVITE_EXHAUSTED": "이미 다 쓴 초대 코드입니다.",
+	"error.INVITE_ALREADY_MEMBER": "이미 이 가계부의 멤버입니다.",
+	"error.ACCOUNT_HAS_TRANSACTIONS": "거래가 있는 계좌는 지울 수 없습니다. 보관 처리해 주세요.",
+	"error.CATEGORY_HAS_TRANSACTIONS": "거래가 있는 분류는 지울 수 없습니다.",
+	"error.CATEGORY_HAS_CHILDREN": "하위 분류를 먼저 정리해 주세요.",
+	"error.JOURNAL_ENTRY_UNBALANCED": "양쪽 금액이 맞지 않습니다.",
+	"error.TRANSACTION_AMOUNT_INVALID": "0보다 큰 금액을 입력해 주세요.",
+	"error.CURRENCY_NOT_SUPPORTED": "지원하지 않는 통화입니다.",
+	"error.FX_RATE_UNAVAILABLE": "그날의 환율을 가져오지 못했습니다. 직접 입력해 주세요.",
+	"error.VALIDATION_FAILED": "표시된 항목을 확인해 주세요.",
 };

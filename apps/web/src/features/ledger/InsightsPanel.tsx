@@ -5,7 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Button, EmptyState, ProgressBar, SegmentedControl } from "@/ds";
 import { ApiError } from "@/lib/api/errors";
 import type { CategorySummaryNode, LedgerDetail, MonthlySummary, PeriodSummary } from "@/lib/api/types";
-import { useLocale, useT } from "@/lib/i18n/provider";
+import { useLocale, useT, useErrorMessage } from "@/lib/i18n/provider";
 import { Amount } from "@/lib/money/currency";
 
 import { type InkLookup, inkVar } from "@/features/category/ink";
@@ -51,6 +51,7 @@ export function InsightsPanel({ summary, ledger, month, onMonth, accountIds, cat
 }) {
 	const sheet = useSheetStyle();
 	const t = useT();
+	const describe = useErrorMessage();
 	const locale = useLocale();
 	const [mode, setMode] = useState<InsightMode>("month");
 	const [year, setYear] = useState(() => Number(month.slice(0, 4)));
@@ -127,7 +128,7 @@ export function InsightsPanel({ summary, ledger, month, onMonth, accountIds, cat
 			</div>
 
 			{loading ? <div role="status" style={{ padding: "var(--space-6) 0", font: "var(--type-caption)", color: "var(--text-tertiary)" }}>{t("insights.loading")}</div> : null}
-			{error ? <div role="alert" style={{ padding: "var(--space-6) 0", font: "var(--type-prose)", color: "var(--status-danger)" }}>{error.message}</div> : null}
+			{error ? <div role="alert" style={{ padding: "var(--space-6) 0", font: "var(--type-prose)", color: "var(--status-danger)" }}>{describe(error)}</div> : null}
 
 			{analysis?.series.length ? (
 				<div style={{ paddingTop: "var(--space-8)" }}>

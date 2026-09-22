@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Button, Checkbox, Input, Select } from "@/ds";
 import type { LedgerDetail } from "@/lib/api/types";
 import { useT } from "@/lib/i18n/provider";
-import { useCurrencies } from "@/lib/money/currency";
+import { useCurrencyOptions } from "@/lib/money/currency";
 
 import { DialogError, DialogField } from "@/features/common/DialogForm";
 import { Modal } from "@/features/common/Modal";
@@ -26,7 +26,7 @@ export function NewLedgerDialog({
 	initialTimezone?: string;
 }) {
 	const t = useT();
-	const currencies = useCurrencies();
+	const currencyOptions = useCurrencyOptions();
 	const [name, setName] = useState("");
 	const [currency, setCurrency] = useState(initialCurrency);
 	const [timezone, setTimezone] = useState(TIMEZONES.includes(initialTimezone) ? initialTimezone : "Asia/Tokyo");
@@ -64,7 +64,7 @@ export function NewLedgerDialog({
 					<Input value={name} maxLength={100} onChange={(e) => setName(e.target.value)} />
 				</DialogField>
 				<DialogField label={t("slip.currency")} note={t("ledger.currencyNote")}>
-					<Select value={currency} onChange={setCurrency} options={currencies.map((c) => ({ value: c.code, label: `${c.code} · ${c.nameEn}` }))} />
+					<Select value={currency} onChange={setCurrency} options={currencyOptions} />
 				</DialogField>
 				<DialogField label={t("profile.timezone")} note={t("ledger.timezoneNote")}>
 					<Select value={timezone} onChange={setTimezone} options={TIMEZONES.map((tz) => ({ value: tz, label: tz }))} />

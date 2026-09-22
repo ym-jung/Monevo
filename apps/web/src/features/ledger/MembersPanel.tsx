@@ -3,9 +3,8 @@
 import { useState } from "react";
 
 import { Avatar, Button } from "@/ds";
-import { ApiError } from "@/lib/api/errors";
 import type { LedgerDetail } from "@/lib/api/types";
-import { useT } from "@/lib/i18n/provider";
+import { useT, useErrorMessage } from "@/lib/i18n/provider";
 
 import { removeMember, revokeInvite } from "./api";
 
@@ -15,6 +14,7 @@ import { useLedgerMembers } from "./useLedgerMembers";
 export function MembersPanel({ ledger, viewerId, onLeft }: { ledger: LedgerDetail; viewerId: string; onLeft: () => void }) {
 	const sheet = useSheetStyle();
 	const t = useT();
+	const describe = useErrorMessage();
 	const { members, invites, error, busy, isOwner, refresh, run } = useLedgerMembers(ledger);
 	const [confirming, setConfirming] = useState<string | null>(null);
 
@@ -31,7 +31,7 @@ export function MembersPanel({ ledger, viewerId, onLeft }: { ledger: LedgerDetai
 			<SheetHeader label={t("members.andInvites")} />
 			{error ? (
 				<div role="alert" style={{ padding: "var(--space-6) 0", font: "var(--type-prose)", color: "var(--status-danger)" }}>
-					{error instanceof ApiError ? error.message : t("common.genericError")}
+					{describe(error)}
 				</div>
 			) : null}
 
