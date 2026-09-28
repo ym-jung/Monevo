@@ -16,8 +16,8 @@
 		"@monevo/http": "workspace:*",
 		"@monevo/kv": "workspace:*",
 		"@monevo/money": "workspace:*",
-		"drizzle-orm": "^0.44.7",
-		"hono": "^4.13.7"
+		"drizzle-orm": "^0.45.3",
+		"hono": "^4.13.9"
 	},
 	"devDependencies": {
 		"@aws-sdk/client-dynamodb": "^3",
@@ -29,6 +29,6 @@
 		"esbuild": "^0.28.2",
 		"eslint": "^9",
 		"typescript": "^5",
-		"vitest": "^5.0.0"
+		"vitest": "^5.0.1"
 	}
 }
