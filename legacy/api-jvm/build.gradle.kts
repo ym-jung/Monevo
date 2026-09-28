@@ -1,6 +1,6 @@
 plugins {
     java
-    id("com.diffplug.spotless") version "8.10.1"
+    id("com.diffplug.spotless") version "8.10.2"
     id("org.springframework.boot") version "4.1.1"
     id("io.spring.dependency-management") version "1.1.7"
 }
@@ -37,7 +37,7 @@ dependencies {
     implementation("com.github.ben-manes.caffeine:caffeine")
     implementation("org.springframework:spring-context-support")
 
-    implementation("com.bucket4j:bucket4j_jdk17-core:8.19.0")
+    implementation("com.bucket4j:bucket4j_jdk17-core:8.20.0")
 
     implementation("net.logstash.logback:logstash-logback-encoder:9.0")
 
