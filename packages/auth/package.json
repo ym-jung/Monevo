@@ -12,8 +12,8 @@
 	"dependencies": {
 		"@monevo/db": "workspace:*",
 		"@monevo/http": "workspace:*",
-		"drizzle-orm": "^0.44.7",
-		"hono": "^4.13.7",
+		"drizzle-orm": "^0.45.3",
+		"hono": "^4.13.12",
 		"jose": "^6.1.0"
 	},
 	"devDependencies": {
@@ -22,6 +22,6 @@
 		"@types/node": "^26",
 		"eslint": "^9",
 		"typescript": "^5",
-		"vitest": "^5.0.0"
+		"vitest": "^5.0.3"
 	}
 }
