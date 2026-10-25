@@ -81,8 +81,8 @@ importers:
         specifier: ^0.44.7
         version: 0.44.7(postgres@3.4.9)
       hono:
-        specifier: ^4.13.7
-        version: 4.13.7
+        specifier: ^4.13.11
+        version: 4.13.11
       jose:
         specifier: ^6.1.0
         version: 6.2.12
@@ -177,8 +177,8 @@ importers:
   packages/http:
     dependencies:
       hono:
-        specifier: ^4.13.7
-        version: 4.13.7
+        specifier: ^4.13.11
+        version: 4.13.11
     devDependencies:
       '@monevo/eslint-config':
         specifier: workspace:*
@@ -205,8 +205,8 @@ importers:
         specifier: workspace:*
         version: link:../http
       hono:
-        specifier: ^4.13.7
-        version: 4.13.7
+        specifier: ^4.13.11
+        version: 4.13.11
     devDependencies:
       '@aws-sdk/client-dynamodb':
         specifier: ^3
@@ -295,8 +295,8 @@ importers:
         specifier: ^0.44.7
         version: 0.44.7(postgres@3.4.9)
       hono:
-        specifier: ^4.13.7
-        version: 4.13.7
+        specifier: ^4.13.11
+        version: 4.13.11
     devDependencies:
       '@aws-sdk/client-dynamodb':
         specifier: ^3
@@ -353,8 +353,8 @@ importers:
         specifier: ^0.44.7
         version: 0.44.7(postgres@3.4.9)
       hono:
-        specifier: ^4.13.7
-        version: 4.13.7
+        specifier: ^4.13.11
+        version: 4.13.11
     devDependencies:
       '@aws-sdk/client-dynamodb':
         specifier: ^3
@@ -408,8 +408,8 @@ importers:
         specifier: ^0.44.7
         version: 0.44.7(postgres@3.4.9)
       hono:
-        specifier: ^4.13.7
-        version: 4.13.7
+        specifier: ^4.13.11
+        version: 4.13.11
     devDependencies:
       '@aws-sdk/client-dynamodb':
         specifier: ^3
@@ -454,8 +454,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/kv
       hono:
-        specifier: ^4.13.7
-        version: 4.13.7
+        specifier: ^4.13.11
+        version: 4.13.11
     devDependencies:
       '@aws-sdk/client-dynamodb':
         specifier: ^3
@@ -509,8 +509,8 @@ importers:
         specifier: ^0.44.7
         version: 0.44.7(postgres@3.4.9)
       hono:
-        specifier: ^4.13.7
-        version: 4.13.7
+        specifier: ^4.13.11
+        version: 4.13.11
     devDependencies:
       '@aws-sdk/client-dynamodb':
         specifier: ^3
@@ -564,8 +564,8 @@ importers:
         specifier: ^0.44.7
         version: 0.44.7(postgres@3.4.9)
       hono:
-        specifier: ^4.13.7
-        version: 4.13.7
+        specifier: ^4.13.11
+        version: 4.13.11
     devDependencies:
       '@aws-sdk/client-dynamodb':
         specifier: ^3
@@ -2670,8 +2670,8 @@ packages:
     resolution: {integrity: sha512-T2UbfbBEF32wiepXIsMlTW9+dDYC6wMh/t/vYA4tuOMKqWz/n3vr1NFSxQiyP+zk2mXsoMA/i/7qV6LKut1t1A==}
     engines: {node: '>= 0.4'}
 
-  hono@4.13.7:
-    resolution: {integrity: sha512-c8/gF9ac8Y78/agExVocyLevgR+JlpNB444Py0FSX8pJoPdYUfUzRcXtYEYGwt6l19qIlVZPN5Mfsw9jFShmQQ==}
+  hono@4.13.11:
+    resolution: {integrity: sha512-/SMX/RQNJn7oNmFwH6DtwDqcrzZU2otm1FD6OJe2cWF6cfy/F8hq0XVBv7xW3FTJshRQwuBnXHDq2kNsdZnshg==}
     engines: {node: '>=16.9.0'}
 
   idb@5.0.6:
@@ -5641,7 +5641,7 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
-  hono@4.13.7: {}
+  hono@4.13.11: {}
 
   idb@5.0.6: {}
 
